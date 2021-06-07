@@ -1,24 +1,17 @@
 // Question 1
-var food = true;
-var typeOfFood = typeof food;
-console.log(typeOfFood)
+var outOfStock = true;
 
-
-
-
-
-function outOfStock (val1) {
-    if (typeof val1 == "boolean") {
-        console.log("In Stock", val1)
-    } else {
-        console.log("Out of Stock")
-    }
+if (outOfStock) {
+	console.log("In Stock");
+} else {
+	console.log("Out of Stock");
 }
-outOfStock("pizza")
+
 
 // Question 2
 
 for (var i = 15; i < 26; i++) {
+	if (i == 17 || i == 20)
     console.log(i);
 }
 
@@ -51,36 +44,57 @@ var gamesContainer = document.querySelector(".games")
 
 for (var i = 0; i < games.length; i++){
     
-    if (games[i].rating <= 3.5)
-    console.log(games[i].title)
-    console.log(games[i].rating)
-    
-
-    gamesContainer.innerHTML = gamesContainer.innerHTML + "<li>" + games[i].title + " : " + (games[i].rating) + "</li>"
-    
+    if (games[i].rating && games[i].rating < 3.5){
+		console.log(games[i].title);
+    	console.log(games[i].rating);
+		gamesContainer.innerHTML = gamesContainer.innerHTML + "<li>" + games[i].title + " : " + (games[i].rating) + "</li>";
+	}    
 }
 
 // Question 4
 
-function whatIDontLike (rats) {
-
+function whatIDontLike(val){
+	if (typeof val == "string") {
+		console.log("I dont like", val);
+	} else {
+		console.log("Please send in a string")
+	}
 }
 
 // Question 5
 
+function isNumber(val1, val2){
+	if (perseFloat(val1) && perseFloat(val2)){
+		console.log(val1 - val2);
+	} else {
+		console.log("Invalid Argument(s)");
+	}
+}
 
 // Question 6
 
-var updatePage = document.querySelector("h1");
+var updateTitle = document.querySelector("title");
+var heading = document.querySelector("h1");
+var changeColor = document.querySelector("body");
 var button = document.querySelector("button");
+var gamesUl = document.querySelector(".games")
+var headingText = heading.innerHTML
+
 
 function changeUpdatePage (){
-    updatePage.innerHTML = "Programming Foundations Course Assignment - Updated Title";
-    updatePage.style.color = "green";
-    updatePage.style.font = "impact";
+    heading.style.color = "green";
+	heading.style.fontFamily = "impact";
+	updateTitle.innerHTML = "Updated Title";
+	changeColor.style.backgroundColor = "yellow";
+	gamesUl.style.padding = "0";
+	gamesUl.style.listStyleType = "none";
+	heading.innerHTML = "<a href=\"#\">" + headingText + "</a>"
 }
 
 
 button.onclick = changeUpdatePage;
+
+
 //Question 7 
+
 
