@@ -97,4 +97,32 @@ button.onclick = changeUpdatePage;
 
 //Question 7 
 
+var toys = [
+	{
+		name: "Lego",
+		price: 15.6,
+	},
+	{
+		name: "Master of the Universe",
+		price: "28.3",
+	},
+	{
+		name: "Barbie",
+		price: null,
+	},
+	{
+		name: "Mr Potato Head",
+		price: 89.99,
+	},
+];
 
+var priceBtn = document.getElementsByClassName("price")[0];
+priceBtn.onclick = function() {
+	var totalPrice = 0;
+	for (toy in toys) {
+		if (parseFloat(toys[toy].price)) {
+			totalPrice += parseFloat(toys[toy].price);
+		}
+	}
+	console.log(totalPrice);
+}
