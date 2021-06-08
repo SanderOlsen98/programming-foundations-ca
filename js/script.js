@@ -60,6 +60,7 @@ function whatIDontLike(val){
 		console.log("Please send in a string")
 	}
 }
+whatIDontLike();
 
 // Question 5
 
@@ -70,6 +71,7 @@ function isNumber(val1, val2){
 		console.log("Invalid Argument(s)");
 	}
 }
+
 
 // Question 6
 
@@ -116,4 +118,13 @@ var toys = [
 	},
 ];
 
-
+var priceBtn = document.getElementsByClassName("price")[0];
+priceBtn.onclick = function() {
+	var totalPrice = 0;
+	for (toy in toys) {
+		if (parseFloat(toys[toy].price)) {
+			totalPrice += parseFloat(toys[toy].price);
+		}
+	}
+	console.log(totalPrice);
+}
