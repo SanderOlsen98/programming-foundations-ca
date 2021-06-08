@@ -10,7 +10,7 @@ if (outOfStock) {
 
 // Question 2
 
-for (var i = 15; i < 26; i++) {
+for (var i = 15; i <= 25; i++) {
 	if (i == 17 || i == 20)
     console.log(i);
 }
@@ -116,13 +116,4 @@ var toys = [
 	},
 ];
 
-var priceBtn = document.getElementsByClassName("price")[0];
-priceBtn.onclick = function() {
-	var totalPrice = 0;
-	for (toy in toys) {
-		if (parseFloat(toys[toy].price)) {
-			totalPrice += parseFloat(toys[toy].price);
-		}
-	}
-	console.log(totalPrice);
-}
+
